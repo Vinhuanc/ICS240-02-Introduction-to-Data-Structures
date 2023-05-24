@@ -1,0 +1,7 @@
+UML
+
+Medication
+-genericName:String
+-numOfUsers: int
+-mainPurpose: String
+-yearPublic: int

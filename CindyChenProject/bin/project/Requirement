@@ -1,0 +1,52 @@
+Competency #1
+
+
+1
+Thing class
+Goal: Can represent an object in Java
+Problem Description
+You will be writing programs to manage collections of "things" where you get to choose the "thing" in
+the collection. Since you will be reusing your “Thing” class across more than one program, please
+choose something that interests you.
+You can be creative about your thing. However, it is prohibited to use any of the following:
+book
+point
+line
+circle
+grocery item
+student
+person
+bank account
+menu item
+car
+pet
+song
+UML
+Create a uml for your Thing. Review the directions below so that you know what items to include in the
+uml.
+Thing Class
+Create a thing class. The name is not Thing!!! The name is whatever your thing is. Your Thing class must
+have the following characteristics:
+1. Include at least 3 instance variables such that:
+o the first instance variable must be of type String and this variable will be used as a search
+key
+o the second instance variable must be integer (i.e., int) and this variable will be used to find
+aggregate information about Things that are stored in a collection class as will be explained
+later
+o the third variable can be of any type
+2. Implement a three-arguments constructor for your Thing class.
+3. Implement getters and setters for all the attributes of your Thing. (Note that Eclipse will
+automagically create them for you with Source | Generate Getters and Setters)
+4. Implement a toString() method that returns a String representation of your Thing where all the
+instance variables are in one line and separated by tabs (Eclipse will automagically create a toString()
+method for you with Source | Generate toString(). However, the format will not be correct.)
+5. Implement the equals() method for your Thing where two Things are considered equal when they
+have the same search key. Note that, the equality of String attributes should be case insensitive. For
+example, “MATH”, “math” and “Math” match each other. In order to compare strings in Java use the
+String's equalsIgnoreCase() method. For example, the following code should print true:
+String str1 = "Hello";
+String str2 = "hello";
+System.out.println(str1.equalsIgnoreCase(str2));
+(Again, Eclipse will automagically create an equals() method for you with Source | Generate
+hashcode() and equals(). However, you may have to make changes to it to meet this program
+specification.)
