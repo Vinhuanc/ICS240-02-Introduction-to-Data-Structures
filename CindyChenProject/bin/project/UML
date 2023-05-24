@@ -5,3 +5,21 @@ Medication
 -numOfUsers: int
 -mainPurpose: String
 -yearPublic: int
+
++getGenericName(): String
++setGenericName(genericName: String): void
+
++getNumOfUsers(): int
++getNumOfUsers(numOfUsers: int): void
+
++getMainPurpose(): String
++setMainPurpose(mainPurpose:String): void
+
++getYearPublic(): int
++setYearPublic(yearPublic: int): void
+
++toString(): String
+
++equals(med: Medication): boolean
+
++compareTo(med: Medication): int

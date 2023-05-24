@@ -46,11 +46,11 @@ public class Medication implements Comparable<Medication>{
 	}
 	
 	public String toString() {
-		return "Medication: \t" + this.genericName + ", num of users: \t #" + this.numOfUsers + "Main purpose: \t" + this.mainPurpose + "Year open to public: \t" + this.yearPublic;
+		return this.genericName + "\t " + this.numOfUsers + "\t " + this.mainPurpose + "\t " + this.yearPublic + "\t";
 	}
 
 	public boolean equals(Medication med) {
-		if(this.toString().equalsIgnoreCase(med.toString())) {
+		if(this.getGenericName().equalsIgnoreCase(med.getGenericName())) {
 			return true;
 		} else {
 			return false;
