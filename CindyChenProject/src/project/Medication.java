@@ -1,6 +1,6 @@
 package project;
 
-public class Medication implements Comparable<Medication>{
+public class Medication implements Comparable<Medication> {
 	private String genericName;
 	private int numOfUsers;
 	private String mainPurpose;
@@ -49,6 +49,10 @@ public class Medication implements Comparable<Medication>{
 		return this.genericName + "\t " + this.numOfUsers + "\t " + this.mainPurpose + "\t " + this.yearPublic + "\t";
 	}
 
+	public void greetings() {
+		System.out.println("Hello from the Medication class!");
+	}
+	
 	public boolean equals(Medication med) {
 		if(this.getGenericName().equalsIgnoreCase(med.getGenericName())) {
 			return true;

@@ -1,0 +1,34 @@
+UML
+
+Medication
+-genericName:String
+-numOfUsers: int
+-mainPurpose: String
+-yearPublic: int
+
++getGenericName(): String
++setGenericName(genericName: String): void
+
++getNumOfUsers(): int
++getNumOfUsers(numOfUsers: int): void
+
++getMainPurpose(): String
++setMainPurpose(mainPurpose:String): void
+
++getYearPublic(): int
++setYearPublic(yearPublic: int): void
+
++toString(): String
+
++equals(med: Medication): boolean
+
++compareTo(med: Medication): int
+
+
+Overriding: a method with the same function name that appears in the child and parent class, allows the child class to have different method functions than its super class. The compiler will compile the 
+			child's method function body instead from the parent class.
+Overloading: two methods with the same function name, but different parameter list and method functions.
+Casting: assigning a value of one data type to another. 
+Downcasting: typecasting a parent object into the child object, fitting the "parent" object into the same box as the "child" object. Its necessary because it allows developers to build complicated
+				programs using pre-built syntax, saves lots of time. Allows for polymorphism.
+

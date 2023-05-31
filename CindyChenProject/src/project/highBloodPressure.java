@@ -29,6 +29,11 @@ public class highBloodPressure extends Medication{
 	}
 
 	@Override
+	public void greetings() {
+		System.out.println("Hello from the high blood pressure class!");
+	}
+	
+	@Override
 	public String toString() {
 		return super.getGenericName() + "\t " + super.getNumOfUsers() + "\t " + super.getMainPurpose() + "\t " + super.getYearPublic() + "\t" + this.drugClass + "\t" + this.isCommon + "\t" ;
 	}
