@@ -2,11 +2,11 @@ package project;
 
 import java.util.Arrays;
 
-public class highBloodPressure extends Medication{
+public class HighBloodPressure extends Medication{
 	private String drugClass;
 	private boolean isCommon;
 	
-	public highBloodPressure(String genericName, int numOfUsers, String mainPurpose, int yearPublic, String drugClass, boolean isCommon) {
+	public HighBloodPressure(String genericName, int numOfUsers, String mainPurpose, int yearPublic, String drugClass, boolean isCommon) {
 		super(genericName, numOfUsers, mainPurpose, yearPublic);
 		this.drugClass = drugClass;
 		this.isCommon = isCommon;

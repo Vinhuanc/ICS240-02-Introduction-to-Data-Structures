@@ -63,9 +63,9 @@ public class Medication implements Comparable<Medication> {
 	
 	@Override
 	public int compareTo(Medication med) {
-		if(this.getGenericName().compareTo(med.getGenericName()) >0) {
+		if(this.getGenericName().compareToIgnoreCase(med.getGenericName()) >0) {
 			return 1;
-		} else if(this.getGenericName().compareTo(med.getGenericName()) < 0) {
+		} else if(this.getGenericName().compareToIgnoreCase(med.getGenericName()) < 0) {
 			return -1;
 		} else {
 			return 1;
