@@ -1,5 +1,6 @@
 package project;
 
+import java.util.ArrayList;
 
 public class MedicationDriver {
 
@@ -34,7 +35,7 @@ public class MedicationDriver {
 //		System.out.println(mc.toString());
 
 
-		MedicationCollectionLinkedList mc = new MedicationCollectionLinkedList();
+		LinkedList mc = new LinkedList();
 		Medication one = new Medication("Atorvastatin",24493971, "Cholesterol", 1996  );
 		Medication two = new Medication("Amoxicillin",20368921 , "Antibiotic", 1972);
 		Medication three = new Medication("Lisinopril", 19990170, "Blood Pressure", 1978);
@@ -57,6 +58,12 @@ public class MedicationDriver {
 		System.out.println(mc.lastIndexOf(three));
 
 		System.out.println(mc.toString());
+		
+		ArrayList<Medication> mList = new ArrayList<Medication>();
+		ArrayList<Integer> intList = new ArrayList<Integer>();
+		intList.add(2);
+		intList.add(new Integer(2));
+		
 	}
 
 }

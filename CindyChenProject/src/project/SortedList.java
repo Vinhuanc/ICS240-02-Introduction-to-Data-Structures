@@ -2,11 +2,11 @@ package project;
 
 import java.util.Iterator;
 
-public class MedicationCollection implements Iterable<Medication> {
+public class SortedList<E extends Comparable<E>> implements Iterable<Medication> {
 	private Medication[] medications;
 	private int count;
 
-	public MedicationCollection(int maxCount) {
+	public SortedList(int maxCount) {
 		medications = new Medication[maxCount];
 		count = 0;
 	}
@@ -149,6 +149,10 @@ public class MedicationCollection implements Iterable<Medication> {
 		}
 
 	}
+
+	
+
+
 	
 	
 	
