@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="count"/>
+		<item key="selection" value="Name"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="name"/>
+			<item value="ic"/>
+			<item value="compare"/>
 			<item value="medications.length"/>
 			<item value="-1"/>
 			<item value="&gt;"/>
@@ -17,8 +20,8 @@
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="668"/>
-		<item key="DIALOG_Y_ORIGIN" value="218"/>
+		<item key="DIALOG_X_ORIGIN" value="452"/>
+		<item key="DIALOG_Y_ORIGIN" value="396"/>
 		<item key="DIALOG_WIDTH" value="336"/>
 		<item key="DIALOG_HEIGHT" value="402"/>
 		<item key="DIALOG_FONT_NAME" value="1|.AppleSystemUIFont|11.0|0|COCOA|1|.AppleSystemUIFont"/>
