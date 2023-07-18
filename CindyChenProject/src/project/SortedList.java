@@ -2,8 +2,8 @@ package project;
 
 import java.util.Iterator;
 
-public class SortedList<E extends Comparable<E>> implements Iterable<Medication> {
-	private Medication[] medications;
+public class SortedList<E extends Comparable<E>> implements Iterable<E> {
+	private Object[] medications;
 	private int count;
 
 	public SortedList(int maxCount) {
@@ -11,10 +11,10 @@ public class SortedList<E extends Comparable<E>> implements Iterable<Medication>
 		count = 0;
 	}
 
-	public boolean insert(Medication med) {
+	public boolean insert(E med) {
 		if (count < medications.length) {
 			int i;
-			for (i = count - 1; i >= 0 && medications[i].compareTo(med) > 0; i--) {
+			for (i = count - 1; i >= 0 && ((Comparable<E>) medications[i]).compareTo(med) > 0; i--) {
 				medications[i + 1] = medications[i];
 			}
 			medications[i + 1] = med;
@@ -25,7 +25,7 @@ public class SortedList<E extends Comparable<E>> implements Iterable<Medication>
 		}
 	}
 
-	public int findMedication(Medication med) {
+	public int findMedication(E med) {
 		for (int i = 0; i < count; i++) {
 			if (medications[i].equals(med)) {
 				return i;
@@ -34,7 +34,7 @@ public class SortedList<E extends Comparable<E>> implements Iterable<Medication>
 		return -1;
 	}
 
-	public void delete(Medication med) {
+	public void delete(E med) {
 		int index = findMedication(med);
 	
 		for (int i = index + 1; i < count; i++) {
@@ -82,7 +82,7 @@ public class SortedList<E extends Comparable<E>> implements Iterable<Medication>
 		return index;
 	}
 
-	public Medication grab(int num) {
+	public Object grab(int num) {
 		if (medications[num] != null) {
 			return medications[num];
 
@@ -105,8 +105,8 @@ public class SortedList<E extends Comparable<E>> implements Iterable<Medication>
 		String data = "Generic Name: \t Main Purpose: \t Population: \t Year of Public: \t \n";
 		data += "--------------------------------------\n";
 		for (int i = 0; i < count; i++) {
-			data += medications[i].getGenericName() + " \t" + medications[i].getMainPurpose() + "\t"
-					+ medications[i].getNumOfUsers() + " \t\t" + medications[i].getYearPublic() + "\n";
+			data += ((Medication) medications[i]).getGenericName() + " \t" + ((Medication) medications[i]).getMainPurpose() + "\t"
+					+ ((Medication) medications[i]).getNumOfUsers() + " \t\t" + ((Medication) medications[i]).getYearPublic() + "\n";
 		}
 		return data;
 	}
@@ -122,7 +122,7 @@ public class SortedList<E extends Comparable<E>> implements Iterable<Medication>
 	}
 
 	@Override
-	public Iterator<Medication> iterator() {
+	public Iterator<E> iterator() {
 
 		return null;
 	}
@@ -145,7 +145,7 @@ public class SortedList<E extends Comparable<E>> implements Iterable<Medication>
 
 		@Override
 		public Medication next() {
-			return medications[cursor];
+			return (Medication) medications[cursor];
 		}
 
 	}

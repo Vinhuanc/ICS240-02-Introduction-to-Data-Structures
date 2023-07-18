@@ -2,66 +2,70 @@ package project;
 
 import java.util.Iterator;
 
-public class LinkedList<E extends Comparable<E>> implements Iterable<Medication>{
-	Node<Medication> head;
-	int manyNodes;
+public class LinkedList<E extends Comparable<E>> implements Iterable<E>{
+	 Node<E> head;
 
 	public LinkedList() {
 		super();
 		head = null;
-		manyNodes=0;
+		
 	}
 
-	public void add(Medication med) {
-		head = new Node<Medication>(med, head);
-		manyNodes++;
+	public void add(E med) {
+		head = new Node<E>(med, head);
 
 	}
 	
-	public void addMedication(Medication med) {
+	public void addMedication(E med) {
 		if(head == null) {
-			head = new Node<Medication>(med, null);
+			head = new Node<E>(med, null);
 		} else if(med.compareTo(head.getData()) > 0) {
-			head = new Node<Medication>(med, head);
+			head = new Node<E>(med, head);
 		} else {
-			Node<Medication> previous = findPreviousNodeAdd(med);
-			previous.setLink(new Node<Medication>(med, previous.getLink()));
+			Node<E> previous = findPreviousNodeAdd(med);
+			previous.setLink(new Node<E>(med, previous.getLink()));
 		}
-		manyNodes++;
 	}
 	
-	private Node<Medication> findPreviousNodeAdd(Medication med) {
-		Node<Medication> cursor = head;
+	private Node<E> findPreviousNodeAdd(E med) {
+		Node<E> cursor = head;
 		while(cursor.getLink() != null && cursor.getLink().getData().compareTo(med) > 0) {
 			cursor = cursor.getLink();
 		}
 		return cursor;
 	}
 
-	private Node<Medication> findPreviousNodeRemove(Medication med) {
-		Node<Medication> cursor = head;
+	private Node<E> findPreviousNodeRemove(E med) {
+		Node<E> cursor = head;
 		while(cursor.getLink() != null && !cursor.getLink().getData().equals(med)){
 			cursor = cursor.getLink();
 		}
+	
 		return cursor;
 	}
 	
-	public void delete(Medication med) {
+	public void delete(E med) {
 		if(head != null && head.getData().equals(med)) {
 			head = head.getLink();
 			
 		} else if(head != null) {
-			Node<Medication> previous = findPreviousNodeRemove(med);
+			Node<E> previous = findPreviousNodeRemove(med);
 			previous.setLink(previous.getLink().getLink());
 			}
 	}
 	
 	public int size() {
-		return manyNodes;
+		int num = 0;
+		Node<E> cursor = head;
+		while(cursor != null) {
+			num++;
+			cursor = cursor.getLink();
+		}
+		return num;
 	}
 	
 	public boolean isEmpty() {
-		if(manyNodes == 0) {
+		if(head == null) {
 			return true;
 		} else {
 			return false;
@@ -70,7 +74,7 @@ public class LinkedList<E extends Comparable<E>> implements Iterable<Medication>
 	
 	public int indexOf(Medication med) {
         int index = 1;
-        Node<Medication> curr = head;
+        Node<E> curr = head;
         while (curr != null && !med.equals(curr.getData())) {
             index++;
             curr = curr.getLink();
@@ -81,19 +85,28 @@ public class LinkedList<E extends Comparable<E>> implements Iterable<Medication>
         return index;
     }
 	
-	public Medication grab(int num) {
-		if(num < 1 || num > manyNodes) {
+	public E grab(int num) {
+		int count = 1;
+		Node<E> cursor = head;
+		while(cursor != null) {
+			count++;
+			cursor = cursor.getLink();
+		}
+		if(num < 1 || num > count) {
 			return null;
+		} else {
+			int index = 1;
+			cursor = head;
+			while(index < num) {
+				index++;
+				cursor = cursor.getLink();
+			}
+			return cursor.getData();
 		}
-		Node<Medication> current = head;
-		for(int i = 1; i<num; i++) {
-			current = current.getLink();
-		}
-		return current.getData();
 	}
 	
-	public boolean contains(Medication med) {
-		Node<Medication> current = head;
+	public boolean contains(E med) {
+		Node<E> current = head;
 		while(current != null && med.compareTo(current.getData()) != 0 ) {
 			current = current.getLink();
 		}
@@ -104,7 +117,7 @@ public class LinkedList<E extends Comparable<E>> implements Iterable<Medication>
 		StringBuilder sb = new StringBuilder();
 		sb.append("Generic Name: \t Number of Users \t Main Purpose \t Year Public \t\n");
 		sb.append("-----\t-----\t-----\t-----\t\n");
-		Node<Medication> current = head;
+		Node<E> current = head;
 		while(current != null) {
 			sb.append(current.getData().toString());
 			sb.append("\n");
@@ -114,7 +127,7 @@ public class LinkedList<E extends Comparable<E>> implements Iterable<Medication>
 	}
 	
 	 public int countOccurrences(Medication med) {
-		 Node<Medication> current = head;
+		 Node<E> current = head;
 	        int count = 0;
 	        while (current != null) {
 	            if (current.getData().equals(med)) {
@@ -127,7 +140,7 @@ public class LinkedList<E extends Comparable<E>> implements Iterable<Medication>
 	 
 	 public int lastIndexOf(Medication med) {
 		 int index = 1;
-		 Node<Medication> curr = head;
+		 Node<E> curr = head;
 	        while (curr != null && !med.equals(curr.getData())) {
 	            index++;
 	            curr = curr.getLink();
@@ -138,21 +151,21 @@ public class LinkedList<E extends Comparable<E>> implements Iterable<Medication>
 	        return index;
 		}
 	 @Override
-		public Iterator<Medication> iterator() {
+		public Iterator<E> iterator() {
 
 			return null;
 		}
 		
-		private class MedicationIterator implements Iterator<Medication>{
+		private class MedicationIterator implements Iterator<E>{
 			int manyNodes;
 			public MedicationIterator() {
 				super();
-				Node<Medication> current = head;
+				Node<E> current = head;
 			}
 
 			@Override
 			public boolean hasNext() {
-				Node<Medication> current = head;
+				Node<E> current = head;
 				if(current.getData() != null) {
 					return true;
 				} else 
@@ -160,8 +173,8 @@ public class LinkedList<E extends Comparable<E>> implements Iterable<Medication>
 			}
 
 			@Override
-			public Medication next() {
-				Node<Medication> current = head;
+			public E next() {
+				Node<E> current = head;
 				if(current != null) {
 					 return current.getData();
 				} else {

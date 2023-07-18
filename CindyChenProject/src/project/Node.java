@@ -5,7 +5,7 @@ public class Node<E> {
 	E data;
 	
 	public Node(E med, Node<E> objectBehind) {
-		data = med;
+		data = (E) med;
 		link = objectBehind;
 	}
 

@@ -2,24 +2,22 @@ package project;
 
 public class LinkStack<E> {
 	private Node<E> top;
+	private int manyNodes;
 	
 	public LinkStack() {
 		top = null;
-	//	int manyNodes = 0; //unsure if this is needed
+	    manyNodes = 0;
 	}
 
 	public void push (E e) {
-		//Node<E> newNode = new Node<E>(e);
-//		newNode.setNext(top);
-//		top = newNode;
-		top = new Node<E>( e, top); //unsure if this is the right way
-		//manyNodes++; //unsure if this is needed
+		top = new Node<E>( e, top); 
+		manyNodes++; 
 	}
 	
 	public E pop() {
 		E element = top.getData();
 		top = top.getLink();
-		//manyNodes--; //unsure if this is needed
+		manyNodes--; 
 		return element;
 	}
 	
