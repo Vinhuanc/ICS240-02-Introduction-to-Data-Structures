@@ -92,4 +92,6 @@
 	<section name="BuildPathsPropertyPage">
 		<item key="pageIndex" value="0"/>
 	</section>
+	<section name="RenameInformationPopup">
+	</section>
 </section>

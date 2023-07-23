@@ -5,5 +5,5 @@
  * @author cindy
  *
  */
-module FinalProjectDS {
+module BinarySearchTree {
 }
