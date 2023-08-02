@@ -16,6 +16,7 @@ public class RecursiveMethodsDriver {
 
 	public static void m1(int n) {
 		System.out.println(n);
+		
 		if (n > 1) {
 			m1(n - 1);
 		}
@@ -30,12 +31,8 @@ public class RecursiveMethodsDriver {
 
 	public static void m3(int n) {
 		System.out.println(n);
-		if (n > 1) {
-			m1(n - 1);
-		}
-		if (n > 1) {
-			m2(n - 1);
-		}
+		m1(n);
+		m2(n);
 		System.out.println(n);
 	}
 

@@ -15,11 +15,11 @@ public class RestaurantDriver {
         ord1.insert(new MenuItem("Spring rolls ",5.8,4));
         ord1.insert(new MenuItem("Sweet and Sour Chicken",8.25,2));
         
-        ord1.inorder();
+        ord1.inOrder();
         System.out.println("\n\n");
-        ord1.preorder();
+        ord1.preOrder();
         System.out.println("\n\n");
-        ord1.postorder();
+        ord1.postOrder();
         System.out.println("\n\n");
 
         ord2.insert(new MenuItem("Chow Mein",2.5,1));
@@ -34,10 +34,10 @@ public class RestaurantDriver {
         
 
         System.out.println(ord1);
-        System.out.println(ord1.size());
+        System.out.println( ord1.size());
         System.out.println(ord1.depth());
-        System.out.println(ord1.getTotalQty());
-       System.out.println(ord1.search("Chow Mein"));
+        System.out.println("quantity" + ord1.getTotalQty());
+        System.out.println(ord1.search("Chow Mein"));
         System.out.println(ord1.getTotalBeforeTax());
         System.out.println(ord1.getTax(8));
         System.out.println(ord1.getTip(20));

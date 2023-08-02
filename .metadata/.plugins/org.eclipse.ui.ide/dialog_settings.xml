@@ -17,6 +17,7 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="/Users/cindy/Introduction to Data Structures/ToDoList"/>
 			<item value="/Users/cindy/Downloads/New.Medication.Database.Cindy.Chen"/>
 			<item value="/Users/cindy/Desktop/demo"/>
 		</list>
